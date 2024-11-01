@@ -67,11 +67,11 @@ function buyRover() {
     }
 }
 
-function collectionAutoUpgrades() {
+function collectAutoUpgrades() {
     autoUpgrades.forEach(upgrade => {
         cheeseCount += upgrade.quantity * upgrade.bonus;
     });
     updateDisplay();
 }
 
-
+setInterval(collectAutoUpgrades, 3000);
