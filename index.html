@@ -12,43 +12,63 @@
 <body class="bg-dark text-white">
     <div class="container text-center">
         <h1 id="game-title" class="mt-4">Mine for Galactic Resources</h1>
-        <img src="stitch.jpg" alt="Mine with Stitch" id="mine-image" class="img-fluid rounded-circle shadow mb-4">
-        <h2><span id="cheese-count">0</span> Cheese</h2>
 
-        <div class="d-flex justify-content-center align-items-center">
-            <div class="p-3">
-                <h4>Click Upgrades</h4>
-                <button id="buy-pickaxe" class="btn btn-primary mb-2">
-                    <img src="pickaxe.jpg" alt="Pickaxe" class="upgrade-icon"> Pickaxe (+1/click) - <span
-                        id="pickaxe-price">50</span> Cheese
-                </button>
-                <button id="buy-cart" class="btn btn-primary mb-2">
-                    <img src="cart.jpg" alt="Cart" class="upgrade-icon"> Cart (+4/click) - <span
-                        id="cart-price">250</span> Cheese
-                </button>
+        <!-- Tabs -->
+        <ul class="nav nav-tabs" id="gameTabs">
+            <li class="nav-item">
+                <a class="nav-link active" href="#" id="tab-game">Game</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" id="tab-stats">Stats</a>
+            </li>
+        </ul>
+
+        <div id="game-content">
+            <img src="stitch.jpg" alt="Mine with Stitch" id="mine-image" class="img-fluid rounded-circle shadow mb-4">
+            <h2><span id="cheese-count">0</span> Cheese</h2>
+
+            <div class="d-flex justify-content-center align-items-center">
+                <div class="p-3">
+                    <h4>Click Upgrades</h4>
+                    <button id="buy-pickaxe" class="btn btn-primary mb-2">
+                        <img src="pickaxe.jpg" alt="Pickaxe" class="upgrade-icon"> Pickaxe (+1/click) - <span
+                            id="pickaxe-price">50</span> Cheese
+                    </button>
+                    <button id="buy-cart" class="btn btn-primary mb-2">
+                        <img src="cart.jpg" alt="Cart" class="upgrade-icon"> Cart (+4/click) - <span
+                            id="cart-price">250</span> Cheese
+                    </button>
+                </div>
+                <div class="p-3">
+                    <h4>Automatic Upgrades</h4>
+                    <button id="buy-miner" class="btn btn-danger mb-2">
+                        <img src="miner.jpg" alt="Miner" class="upgrade-icon"> Miner (+10/3s) - <span
+                            id="miner-price">1000</span> Cheese
+                    </button>
+                    <button id="buy-rover" class="btn btn-danger mb-2">
+                        <img src="rover.jpg" alt="Lunar Rover" class="upgrade-icon"> Lunar Rover (+100/3s) - <span
+                            id="rover-price">50000</span> Cheese
+                    </button>
+                </div>
             </div>
-            <div class="p-3">
-                <h4>Automatic Upgrades</h4>
-                <button id="buy-miner" class="btn btn-danger mb-2">
-                    <img src="miner.jpg" alt="Miner" class="upgrade-icon"> Miner (+10/3s) - <span
-                        id="miner-price">1000</span> Cheese
-                </button>
-                <button id="buy-rover" class="btn btn-danger mb-2">
-                    <img src="rover.jpg" alt="Lunar Rover" class="upgrade-icon"> Lunar Rover (+100/3s) - <span
-                        id="rover-price">50000</span> Cheese
-                </button>
+
+            <div class="row mt-4">
+                <div class="col">
+                    <h5>Click Stats</h5>
+                    <p>Click Power: <span id="click-power">1</span></p>
+                </div>
+                <div class="col">
+                    <h5>Automatic Stats</h5>
+                    <p>Auto Collection Rate: <span id="auto-rate">0</span></p>
+                </div>
             </div>
         </div>
 
-        <div class="row mt-4">
-            <div class="col">
-                <h5>Click Stats</h5>
-                <p>Click Power: <span id="click-power">1</span></p>
-            </div>
-            <div class="col">
-                <h5>Automatic Stats</h5>
-                <p>Auto Collection Rate: <span id="auto-rate">0</span></p>
-            </div>
+        <!-- Stats Tab Content -->
+        <div id="stats-content" style="display: none;">
+            <h2>Resource Statistics</h2>
+            <p>Current Resources: <span id="current-resources">0</span></p>
+            <p>Total Resources Collected: <span id="total-resources">0</span></p>
         </div>
     </div>
     <script src="app.js"></script>

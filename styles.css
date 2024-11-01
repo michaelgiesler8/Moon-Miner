@@ -1,7 +1,9 @@
 /* styles.css */
 body {
-    background-image: linear-gradient(to top, #000428, #004e92);
-    /* Deep space theme */
+    background-image: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80");
+    /* Tropical beach background */
+    background-size: cover;
+    background-attachment: fixed;
     color: #ffffff;
     font-family: 'Comic Sans MS', 'Comic Sans', cursive;
     display: flex;
@@ -13,93 +15,119 @@ body {
 }
 
 .container {
-    background-color: rgba(0, 0, 0, 0.75);
-    /* Semi-transparent black background */
+    background: linear-gradient(135deg, rgba(255, 183, 77, 0.85), rgba(255, 94, 98, 0.85));
     padding: 30px;
     border-radius: 20px;
-    box-shadow: 0px 0px 30px 10px rgba(0, 0, 0, 0.8);
-    /* Deep shadow for depth */
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.5);
+    /* Soft shadow for depth */
     max-width: 700px;
     width: 90%;
     text-align: center;
+    backdrop-filter: blur(10px);
+    /* Blurs the background behind the container */
+    border: 2px solid rgba(255, 223, 89, 0.5);
+    margin-top: 10vh;
 }
 
 #game-title {
-    color: #ffdd59;
-    font-size: 3em;
+    color: #ffd700;
+    font-size: 3.5em;
     font-weight: bold;
     text-shadow: 3px 3px 8px #333;
     margin-bottom: 20px;
+    animation: wave 2s infinite ease-in-out alternate;
+    /* Title wave effect */
+}
+
+/* Wave effect animation */
+@keyframes wave {
+    0% {
+        transform: translateY(-5px);
+    }
+
+    100% {
+        transform: translateY(5px);
+    }
 }
 
 #mine-image {
     cursor: pointer;
-    width: 180px;
-    height: 180px;
+    width: 160px;
+    height: 160px;
     border-radius: 50%;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    box-shadow: 0px 0px 20px 10px rgba(255, 223, 89, 0.5);
-    /* Yellow glow */
+    box-shadow: 0px 0px 30px 15px rgba(255, 223, 89, 0.8), 0px 0px 15px 8px rgba(255, 183, 77, 0.8);
 }
 
 #mine-image:hover {
-    transform: scale(1.15);
-    box-shadow: 0px 0px 30px 15px rgba(255, 223, 89, 0.8);
+    transform: scale(1.2);
+    box-shadow: 0px 0px 45px 20px rgba(255, 223, 89, 1), 0px 0px 25px 10px rgba(255, 94, 98, 0.9);
     /* Brighter glow on hover */
 }
 
 h2 {
-    font-size: 2em;
+    font-size: 2.5em;
     color: #ffd700;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    margin-top: 15px;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
+    margin-top: 20px;
 }
 
 button {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1em;
-    width: 220px;
-    padding: 10px;
+    font-size: 1.1em;
+    width: 240px;
+    padding: 12px;
     font-weight: bold;
     color: #333;
     border: none;
-    border-radius: 10px;
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    margin-bottom: 10px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    margin-bottom: 12px;
+    background-size: 200% 100%;
 }
 
 button img {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
+    width: 35px;
+    height: 35px;
+    margin-right: 12px;
     border-radius: 5px;
-    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
 }
 
 button.btn-primary {
-    background: linear-gradient(145deg, #ffb06b, #ffa07a);
+    background-image: linear-gradient(90deg, #ffb06b, #ff7b60, #ffb06b);
+    /* Vibrant gradient */
+    background-position: 0 0;
+    color: #333;
 }
 
 button.btn-primary:hover {
+    background-position: 100% 0;
+    /* Animate gradient on hover */
     transform: scale(1.05);
-    box-shadow: 0px 8px 18px rgba(255, 160, 122, 0.8);
+    box-shadow: 0px 8px 20px rgba(255, 160, 122, 0.8);
 }
 
 button.btn-danger {
-    background: linear-gradient(145deg, #ff5e5e, #ff6347);
+    background-image: linear-gradient(90deg, #ff5e5e, #ff948f, #ff5e5e);
+    /* Intense gradient */
+    background-position: 0 0;
+    color: #333;
 }
 
 button.btn-danger:hover {
+    background-position: 100% 0;
+    /* Animate gradient on hover */
     transform: scale(1.05);
-    box-shadow: 0px 8px 18px rgba(255, 99, 71, 0.8);
+    box-shadow: 0px 8px 20px rgba(255, 99, 71, 0.8);
 }
 
 button:disabled {
-    background-color: #444;
-    color: #999;
+    background-color: #555;
+    color: #aaa;
     cursor: not-allowed;
     box-shadow: none;
 }
@@ -117,20 +145,22 @@ button:disabled {
     font-size: 2em;
     font-weight: bold;
     text-shadow: 1px 1px 4px #333;
+    margin-top: 5px;
 }
 
 #click-power,
 #auto-rate {
-    color: #00ffcc;
+    color: #00e6b8;
     font-weight: bold;
     font-size: 1.5em;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 h4 {
-    color: #ffdd59;
+    color: #ffd700;
     font-weight: bold;
     text-shadow: 1px 1px 4px #333;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .row {
@@ -138,15 +168,45 @@ h4 {
 }
 
 .col {
-    padding: 10px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
+    padding: 15px;
+    background: linear-gradient(135deg, rgba(255, 223, 89, 0.4), rgba(255, 183, 77, 0.4));
+    border-radius: 12px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    color: #fff;
 }
 
 p {
-    font-size: 1.2em;
-    color: #ffdd59;
+    font-size: 1.3em;
+    color: #ffd700;
     text-shadow: 1px 1px 3px #333;
-    margin-top: 10px;
+    margin-top: 15px;
+}
+
+.nav-tabs {
+    margin-bottom: 20px;
+}
+
+.nav-tabs .nav-link {
+    color: #ffd700;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px #333;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: #ff6347;
+    color: #ffffff;
+    border: none;
+    text-shadow: 1px 1px 3px #333;
+}
+
+#game-content,
+#stats-content {
+    display: none;
+    /* Hide both by default, we'll show the active one via JavaScript */
+}
+
+#game-content.active,
+#stats-content.active {
+    display: block;
 }
