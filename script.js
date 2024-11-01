@@ -45,6 +45,17 @@ function buyCart() {
     }
 }
 
+function buyMiner() {
+    const miner = autoUpgrades.find(upgrade => upgrade.name === "Miner");
+    if (cheeseCount >= miner.price) {
+        cheeseCount -= miner.price;
+        miner.quantity++;
+        autoCollectionRate += miner.bonus;
+        miner.price = Math.floor(miner.price * 1.2);
+        updateDisplay();
+    }
+}
+
 function buyRover() {
     const rover = autoUpgrades.find(upgrade => upgrade.name === "Rover");
     if (cheeseCount >= rover.price) {
