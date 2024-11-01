@@ -44,3 +44,15 @@ function buyCart() {
         updateDisplay();
     }
 }
+
+function buyRover() {
+    const rover = autoUpgrades.find(upgrade => upgrade.name === "Rover");
+    if (cheeseCount >= rover.price) {
+        cheeseCount -= rover.price;
+        rover.quantity++;
+        autoCollectionRate += rover.bonus;
+        rover.price = Math.floor(rover.price * 1.2);
+        updateDisplay();
+    }
+}
+
