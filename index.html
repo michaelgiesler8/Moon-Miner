@@ -4,33 +4,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lilo and Stitch Mining Game</title>
+    <title>Lilo & Stitch Moon Mining Game</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body class="bg-dark text-white">
     <div class="container text-center">
-        <h1>Mine for Galactic Resources</h1>
-        <img src="stitch.jpg" onclick="mine()" alt="Stitch" id="stitch-image" class="img-fluid">
-        <h2>Resources: <span id="cheese-count">0</span></h2>
+        <h1 id="game-title" class="mt-4">Mine for Galactic Resources</h1>
+        <img src="stitch.jpg" alt="Mine with Stitch" id="mine-image" class="img-fluid rounded-circle shadow mb-4">
+        <h2><span id="cheese-count">0</span> Cheese</h2>
 
-        <div id="upgrades">
-            <button id="buy-pickaxe" onclick="buyPickaxe()" class="btn">
-                <img src="pickaxe.jpg" alt="Pickaxe" class="upgrade-icon">Buy Pickaxe (+1/click)
-            </button>
-            <button id="buy-cart" onclick="buyCart()" class="btn">
-                <img src="cart.jpg" alt="Cart" class="upgrade-icon">Buy Cart (+4/click)
-            </button>
-            <button id="buy-miner" onclick="buyMiner()" class="btn">
-                <img src="miner.jpg" alt="Miner" class="upgrade-icon">Buy Miner (Automatic +5)
-            </button>
-            <button id="buy-rover" onclick="buyRover()" class="btn">
-                <img src="rover.jpg" alt="Rover" class="upgrade-icon">Buy Rover (Automatic +20)
-            </button>
+        <div class="d-flex justify-content-center align-items-center">
+            <div class="p-3">
+                <h4>Click Upgrades</h4>
+                <button id="buy-pickaxe" class="btn btn-primary mb-2">
+                    <img src="pickaxe.jpg" alt="Pickaxe" class="upgrade-icon"> Pickaxe (+1/click) - <span
+                        id="pickaxe-price">50</span> Cheese
+                </button>
+                <button id="buy-cart" class="btn btn-primary mb-2">
+                    <img src="cart.jpg" alt="Cart" class="upgrade-icon"> Cart (+4/click) - <span
+                        id="cart-price">250</span> Cheese
+                </button>
+            </div>
+            <div class="p-3">
+                <h4>Automatic Upgrades</h4>
+                <button id="buy-miner" class="btn btn-danger mb-2">
+                    <img src="miner.jpg" alt="Miner" class="upgrade-icon"> Miner (+10/3s) - <span
+                        id="miner-price">1000</span> Cheese
+                </button>
+                <button id="buy-rover" class="btn btn-danger mb-2">
+                    <img src="rover.jpg" alt="Lunar Rover" class="upgrade-icon"> Lunar Rover (+100/3s) - <span
+                        id="rover-price">50000</span> Cheese
+                </button>
+            </div>
         </div>
-        <p>Click Power: <span id="click-power">1</span></p>
-        <p>Automatic Collection Rate: <span id="auto-collection">0</span></p>
+
+        <div class="row mt-4">
+            <div class="col">
+                <h5>Click Stats</h5>
+                <p>Click Power: <span id="click-power">1</span></p>
+            </div>
+            <div class="col">
+                <h5>Automatic Stats</h5>
+                <p>Auto Collection Rate: <span id="auto-rate">0</span></p>
+            </div>
+        </div>
     </div>
     <script src="app.js"></script>
 </body>
