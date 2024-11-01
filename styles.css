@@ -1,0 +1,110 @@
+body {
+    background-image: url("https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #ffffff;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 50px;
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+}
+
+h1 {
+    color: #ffdd59;
+    font-size: 3em;
+    text-shadow: 2px 2px 4px #333;
+    font-weight: bold;
+}
+
+h2 {
+    color: #ffd700;
+    font-size: 2em;
+    margin-top: 20px;
+    text-shadow: 1px 1px 3px #333;
+}
+
+#cheese-count {
+    color: #00ffcc;
+    font-size: 2em;
+}
+
+#mine-image {
+    cursor: pointer;
+    width: 150px;
+    transition: transform 0.3s ease-in-out
+}
+
+#mine-image:hover {
+    transform: scale(1.1);
+}
+
+#upgrades {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 12px;
+    font-size: 1.2em;
+    color: #333;
+    background-color: #ffeb99;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+#buy-pickaxe {
+    background: #ffa07a;
+}
+
+#buy-cart {
+    background-color: #ff6347;
+}
+
+#buy-miner {
+    background-color: #ffb347;
+}
+
+#buy-rover {
+    background-color: #ffcccb;
+}
+
+.upgrade-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2)
+}
+
+p {
+    font-size: 1.2em;
+    color: #ffdd59;
+    text-shadow: 1px 1px 3px #333;
+    margin-top: 10px;
+}
+
+#click-power,
+#auto-collection {
+    color: #00ffcc;
+    font-weight: bold;
+    font-size: 1.5em;
+}
