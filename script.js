@@ -33,3 +33,14 @@ function buyPickaxe() {
         updateDisplay();
     }
 }
+
+function buyCart() {
+    const cart = clickUpgrades.find(upgrade => upgrade.name === "Cart");
+    if (cheeseCount >= cart.price) {
+        cheeseCount -= cart.price;
+        cart.quantity++;
+        clickPower += cart.bonus;
+        cart.price = Math.floor(cart.price * 1.2);
+        updateDisplay();
+    }
+}
