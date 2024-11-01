@@ -1,5 +1,5 @@
 let cheeseCount = 0;
-let clickPower = 0;
+let clickPower = 1;
 let autoCollectionRate = 0;
 
 const clickUpgrades = [
@@ -14,13 +14,21 @@ const autoUpgrades = [
 
 function mine() {
     cheeseCount += clickPower;
-    updateCheeseCount();
+    updateDisplay();
+    updateButtons();
 }
 
 function updateDisplay() {
     document.getElementById("cheese-count").innerText = cheeseCount;
     document.getElementById("click-power").innerText = clickPower;
     document.getElementById("auto-collection").innerText = autoCollectionRate;
+}
+
+function updateButtons() {
+    document.getElementById("buy-pickaxe").disabled = cheeseCount < clickUpgrades[0].price;
+    document.getElementById("buy-cart").disabled = cheeseCount < clickUpgrades[1].price;
+    document.getElementById("buy-miner").disabled = cheeseCount < autoUpgrades[0].price;
+    document.getElementById("buy-rover").disabled = cheeseCount < autoUpgrades[1].price;
 }
 
 function buyPickaxe() {
